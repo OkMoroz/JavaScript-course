@@ -38,7 +38,7 @@ const restaurant = {
 
   orderPasta(ing1, ing2, ing3) {
     console.log(
-      `Here is your declicious pasta with ${ing1}, ${ing2} and ${ing3}`
+      `Here is your delicious pasta with ${ing1}, ${ing2} and ${ing3}`
     );
   },
 
@@ -48,7 +48,27 @@ const restaurant = {
   },
 };
 
-const rest1 = {
+const properties = Object.keys(openingHours);
+console.log(properties);
+
+let openStr = `We  are open on ${properties.length} days: `;
+
+for (const day of properties) {
+  openStr += `${day}`;
+  console.log(openStr);
+}
+
+const values = Object.values(openingHours);
+console.log(values);
+
+const entries = Object.entries(openingHours);
+console.log(entries);
+
+for (const [day, { open, close }] of entries) {
+  console.log(`On ${day} we open at ${open} and close at ${close}`);
+}
+
+/*const rest1 = {
   name: 'Capri',
   numGuests: 0,
 };
@@ -270,4 +290,4 @@ console.log(rest2);
 
 // // Default values
 // const [p = 1, q = 1, r = 1] = [8, 9];
-// console.log(p, q, r);
+// console.log(p, q, r)*/
