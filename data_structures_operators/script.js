@@ -48,25 +48,119 @@ const restaurant = {
   },
 };
 
-const properties = Object.keys(openingHours);
-console.log(properties);
+// const properties = Object.keys(openingHours);
+// console.log(properties);
 
-let openStr = `We  are open on ${properties.length} days: `;
+// let openStr = `We  are open on ${properties.length} days: `;
 
-for (const day of properties) {
-  openStr += `${day}`;
-  console.log(openStr);
-}
+// for (const day of properties) {
+//   openStr += `${day}`;
+//   console.log(openStr);
+// }
 
-const values = Object.values(openingHours);
-console.log(values);
+// const values = Object.values(openingHours);
+// console.log(values);
 
-const entries = Object.entries(openingHours);
-console.log(entries);
+// const entries = Object.entries(openingHours);
+// console.log(entries);
 
-for (const [day, { open, close }] of entries) {
-  console.log(`On ${day} we open at ${open} and close at ${close}`);
-}
+// for (const [day, { open, close }] of entries) {
+//   console.log(`On ${day} we open at ${open} and close at ${close}`);
+// }
+
+//MAP
+const rest = new Map();
+rest.set('name', 'Classico Italiano');
+rest.set(1, 'Firennze, Italy');
+
+console.log(rest.set(2, 'Lisabon, Portugal'));
+
+rest
+  .set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
+  .set('open', 11)
+  .set('closed', 23)
+  .set(true, 'Open')
+  .set(false, 'Closed');
+
+console.log(rest.get('name'));
+console.log(rest.get(true));
+console.log(rest.get(1));
+
+const time = 21;
+console.log(rest.get(time > rest.get('open') && time < rest.get('closed')));
+console.log(rest.has('categories'));
+console.log(rest.delete(2));
+rest.set([1, 2], 'Test');
+
+const arr = [1, 2];
+rest.set(arr, 'Test');
+
+rest.set(document.querySelector('h1'), 'Heading');
+
+console.log(rest);
+console.log(rest.size);
+// rest.clear();
+
+console.log(rest.get(arr));
+
+//SET
+// const ordersSet = new Set([
+//   'Pasta',
+//   'Pizza',
+//   'Pasta',
+//   'Pizza',
+//   'Pasta',
+//   'Risotto',
+//   'Pasta',
+//   'Pizza',
+//   'Pasta',
+//   'Pizza',
+// ]);
+// console.log(ordersSet);
+// console.log(new Set('Jonas'));
+// console.log(ordersSet.size);
+// console.log(
+//   new Set([
+//     'Pasta',
+//     'Pizza',
+//     'Pasta',
+//     'Pizza',
+//     'Pasta',
+//     'Risotto',
+//     'Pasta',
+//     'Pizza',
+//     'Pasta',
+//     'Pizza',
+//   ]).size
+// );
+
+// console.log(ordersSet.has('Pizza'));
+// console.log(ordersSet.has('Bread'));
+
+// ordersSet.add('Garlic Bread');
+// ordersSet.add('Garlic Bread');
+// console.log(ordersSet);
+// console.log(ordersSet.size);
+
+// ordersSet.delete('Risotto');
+// ordersSet.delete('Bread');
+// console.log(ordersSet);
+// console.log(ordersSet.size);
+
+// // ordersSet.clear();
+// // console.log(ordersSet);
+
+// for (const order of ordersSet) {
+//   console.log(order);
+// }
+
+// const staff = ['Waiter', 'Chef', 'Waiter', 'Manager'];
+// const staffUnique = [...new Set(staff)];
+// console.log(staff);
+// console.log(staffUnique);
+// console.log(new Set(['Waiter', 'Chef', 'Waiter', 'Manager']).size);
+
+// console.log(new Set('bhfbvhf;lietrs;;;v').size);
 
 /*const rest1 = {
   name: 'Capri',
