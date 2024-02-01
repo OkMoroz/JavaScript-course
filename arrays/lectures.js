@@ -226,6 +226,34 @@ TEST DATA 2: [16, 6, 10, 5, 6, 1, 4]
 
 GOOD LUCK 😀
 */
+// const calcAverageHumanAge = function (ages) {
+//   const humanAges = ages.map(function (age) {
+//     let humanAge;
+//     if (age <= 2) {
+//       humanAge = 2 * age;
+//     } else {
+//       humanAge = 16 + age * 4;
+//     }
+//     return humanAge;
+//   });
+//////////
+// const adults = humanAges.filter(function (humanAge) {
+//   return humanAge >= 18;
+// });
+const calcAverageHumanAge = function (ages) {
+  const humanAges = ages.map(age => (age <= 2 ? 2 * age : 16 + age * 4));
+  const adults = humanAges.filter(age => age >= 18);
+
+  if (adults.length === 0) return 0;
+  const middleAge = adults.reduce((acc, age) => acc + age, 0) / adults.length;
+  console.log('Human Ages:', humanAges);
+  console.log('Adults:', adults);
+  console.log('Middle Age:', middleAge);
+  return middleAge;
+};
+
+console.log(calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]));
+console.log(calcAverageHumanAge([16, 6, 10, 5, 6, 1, 4]));
 
 ///////////////////////////////////////
 // Coding Challenge #3
