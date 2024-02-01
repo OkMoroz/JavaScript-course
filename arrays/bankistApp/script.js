@@ -75,6 +75,11 @@ const displayMovements = function (movements) {
 };
 displayMovements(account1.movements);
 
+const calcDisplayBalance = function (movements) {
+  const balance = movements.reduce((acc, mov) => acc + mov, 0);
+  labelBalance.textContent = `${balance} EUR`;
+};
+calcDisplayBalance(account1.movements);
 const createUserName = function (accs) {
   accs.forEach(function (acc) {
     acc.username = acc.owner
@@ -89,50 +94,29 @@ console.log(accounts);
 
 /////////////////////////////////////////////////
 
-const eurToUsd = 1.1;
+// const eurToUsd = 1.1;
 
-// const movementsUSD = movements.map(function (mov) {
-//   return mov * eurToUsd;
-// });
-const movementsUSD = movements.map(mov => mov * eurToUsd);
-console.log(movements);
-console.log(movementsUSD);
+// // const movementsUSD = movements.map(function (mov) {
+// //   return mov * eurToUsd;
+// // });
+// const movementsUSD = movements.map(mov => mov * eurToUsd);
+// console.log(movements);
+// console.log(movementsUSD);
 
-const movementsUSDfor = [];
-for (const mov of movements) movementsUSDfor.push(mov * eurToUsd);
-console.log(movementsUSDfor);
+// const movementsUSDfor = [];
+// for (const mov of movements) movementsUSDfor.push(mov * eurToUsd);
+// console.log(movementsUSDfor);
 
-const movementsDescriptions = movements.map(
-  (mov, i) =>
-    `Movement ${i + 1}: You ${mov > 0 ? 'deposited' : 'withdrew'} ${Math.abs(
-      mov
-    )}`
-  // {
-  //   if (mov > 0) {
-  //     return `Movement ${i + 1}: You deposited ${mov}`;
-  //   } else {
-  //     return `Movement ${i + 1}: You withdrew ${Math.abs(mov)}`;
-  //   }
-  //
-);
-console.log(movementsDescriptions);
-
-const deposits = movements.filter(function (mov) {
-  return mov > 0;
-});
-console.log(movements);
-console.log(deposits);
-
-const depositsFor = [];
-for (const mov of movements) if (mov > 0) depositsFor.push(mov);
-console.log(depositsFor);
-
-const withdrawals = movements.filter(function (mov) {
-  return mov < 0;
-});
-console.log(movements);
-console.log(withdrawals);
-
-const withdrawalsFor = [];
-for (const mov of movements) if (mov < 0) withdrawalsFor.push(mov);
-console.log(withdrawalsFor);
+// const movementsDescriptions = movements.map(
+//   (mov, i) =>
+//     `Movement ${i + 1}: You ${mov > 0 ? 'deposited' : 'withdrew'} ${Math.abs(
+//       mov
+//     )}`
+//   // {
+//   //   if (mov > 0) {
+//   //     return `Movement ${i + 1}: You deposited ${mov}`;
+//   //   } else {
+//   //     return `Movement ${i + 1}: You withdrew ${Math.abs(mov)}`;
+//   //   }
+//   //
+// );
