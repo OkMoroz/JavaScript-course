@@ -1,6 +1,4 @@
-'use strict';
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
-
+/*
 ///////////////////////////////////////
 // Converting and Checking Numbers
 console.log(23 === 23.0);
@@ -38,6 +36,8 @@ console.log(Number.isFinite(23 / 0));
 console.log(Number.isInteger(23));
 console.log(Number.isInteger(23.0));
 console.log(Number.isInteger(23 / 0));
+
+
 ///////////////////////////////////////
 // Math and Rounding
 console.log(Math.sqrt(25));
@@ -80,6 +80,7 @@ console.log((2.7).toFixed(3));
 console.log((2.345).toFixed(2));
 console.log(+(2.345).toFixed(2));
 
+
 ///////////////////////////////////////
 // The Remainder Operator
 console.log(5 % 2);
@@ -107,6 +108,8 @@ labelBalance.addEventListener('click', function () {
     if (i % 3 === 0) row.style.backgroundColor = 'blue';
   });
 });
+
+
 ///////////////////////////////////////
 // Numeric Separators
 
@@ -125,6 +128,7 @@ console.log(PI);
 
 console.log(Number('230_000'));
 console.log(parseInt('230_000'));
+
 
 ///////////////////////////////////////
 // Working with BigInt
@@ -159,6 +163,7 @@ console.log(huge + ' is REALLY big!!!');
 console.log(11n / 3n);
 console.log(10 / 3);
 
+
 ///////////////////////////////////////
 // Creating Dates
 
@@ -176,6 +181,7 @@ console.log(new Date(2037, 10, 31));
 
 console.log(new Date(0));
 console.log(new Date(3 * 24 * 60 * 60 * 1000));
+
 
 // Working with dates
 const future = new Date(2037, 10, 19, 15, 23);
@@ -196,9 +202,11 @@ console.log(Date.now());
 
 future.setFullYear(2040);
 console.log(future);
+
+
 ///////////////////////////////////////
 // Operations With Dates
-const future2 = new Date(2037, 10, 19, 15, 23);
+const future = new Date(2037, 10, 19, 15, 23);
 console.log(+future);
 
 const calcDaysPassed = (date1, date2) =>
@@ -206,9 +214,11 @@ const calcDaysPassed = (date1, date2) =>
 
 const days1 = calcDaysPassed(new Date(2037, 3, 4), new Date(2037, 3, 14));
 console.log(days1);
+
+
 ///////////////////////////////////////
 // Internationalizing Numbers (Intl)
-const num2 = 3884764.23;
+const num = 3884764.23;
 
 const options = {
   style: 'currency',
@@ -224,3 +234,25 @@ console.log(
   navigator.language,
   new Intl.NumberFormat(navigator.language, options).format(num)
 );
+
+
+///////////////////////////////////////
+// Timers
+
+// setTimeout
+const ingredients = ['olives', 'spinach'];
+const pizzaTimer = setTimeout(
+  (ing1, ing2) => console.log(`Here is your pizza with ${ing1} and ${ing2} 🍕`),
+  3000,
+  ...ingredients
+);
+console.log('Waiting...');
+
+if (ingredients.includes('spinach')) clearTimeout(pizzaTimer);
+
+// setInterval
+setInterval(function () {
+  const now = new Date();
+  console.log(now);
+}, 1000);
+*/
