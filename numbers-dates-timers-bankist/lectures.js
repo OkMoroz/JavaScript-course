@@ -1,3 +1,5 @@
+'use strict';
+
 /*
 ///////////////////////////////////////
 // Converting and Checking Numbers
