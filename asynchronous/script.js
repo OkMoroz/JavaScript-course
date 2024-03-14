@@ -35,7 +35,7 @@ const getJSON = function (url, errorMsg = 'Something went wrong') {
   });
 };
 
-
+/*
 ///////////////////////////////////////
 // Our First AJAX Call: XMLHttpRequest
 
@@ -70,6 +70,7 @@ const getCountryData = function (country) {
 getCountryData('portugal');
 getCountryData('usa');
 getCountryData('germany');
+*/
 
 ///////////////////////////////////////
 // Welcome to Callback Hell
@@ -226,6 +227,8 @@ Promise.resolve('Resolved promise 2').then(res => {
 });
 
 console.log('Test end');
+
+
 ///////////////////////////////////////
 // Building a Simple Promise
 const lotteryPromise = new Promise(function (resolve, reject) {
@@ -275,8 +278,11 @@ wait(1)
 //     }, 1000);
 //   }, 1000);
 // }, 1000);
+
 Promise.resolve('abc').then(x => console.log(x));
 Promise.reject(new Error('Problem!')).catch(x => console.error(x));
+
+
 ///////////////////////////////////////
 // Promisifying the Geolocation API
 const getPosition = function () {
@@ -289,6 +295,7 @@ const getPosition = function () {
   });
 };
 // getPosition().then(pos => console.log(pos));
+
 const whereAmI = function () {
   getPosition()
     .then(pos => {
@@ -510,3 +517,4 @@ Promise.any([
 ])
   .then(res => console.log(res))
   .catch(err => console.error(err));
+*/
