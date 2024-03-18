@@ -1,5 +1,5 @@
 {
-  "name": "modules_tooling",
+  "name": "17-modern-js-modules-tooling",
   "version": "1.0.0",
   "description": "",
   "main": "script.js",
@@ -16,6 +16,6 @@
     "regenerator-runtime": "^0.13.7"
   },
   "devDependencies": {
-    "parcel": "^2.12.0"
+    "parcel": "^1.12.4"
   }
 }
