@@ -13,7 +13,7 @@ const timeout = function (s) {
 ///////////////////////////////////////
 const showRecipe = async function () {
   try {
-    // 1) Loadig recipe
+    // 1) Loading recipe
 
     const res = await fetch(
       'https://forkify-api.herokuapp.com/api/v2/recipes/5ed6604591c37cdc054bcc40'
@@ -37,7 +37,7 @@ const showRecipe = async function () {
     console.log(recipe);
 
     // 2)Rendering recipe
-    const murkup = `
+    const markup = `
     <figure class="recipe__fig">
     <img src="${recipe.image}" alt="Tomato" class="recipe__img" />
     <h1 class="${recipe.title}">
@@ -89,6 +89,7 @@ const showRecipe = async function () {
   <div class="recipe__ingredients">
     <h2 class="heading--2">Recipe ingredients</h2>
     <ul class="recipe__ingredient-list">
+    ${recipe.ingredients}
       <li class="recipe__ingredient">
         <svg class="recipe__icon">
           <use href="src/img/icons.svg#icon-check"></use>
@@ -132,7 +133,9 @@ const showRecipe = async function () {
     </a>
   </div>
     `;
-    recipeContainer.insertAdjacentElement('afterbegin', murkup);
+    recipeContainer.innerHTML = '';
+
+    recipeContainer.insertAdjacentHTML('afterbegin', markup);
   } catch (err) {
     alert(err);
   }
